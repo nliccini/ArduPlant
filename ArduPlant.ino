@@ -159,5 +159,3 @@ void wateringAlert() {
     Serial.println(" ");
   } 
 } // end wateringAlert()
-
-
