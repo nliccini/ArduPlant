@@ -53,7 +53,7 @@ void loop() {
   Serial.println(" ");
   
   if(checkMoisture()) {
-    pump(3000);
+    pump(7500);
   }
   else {
     // If soil is not too dry, do nothing.
@@ -75,6 +75,7 @@ void initiate() {
   dryVal = calibrate();
   Serial.print("Dry Value: ");
   Serial.println(dryVal);
+  blinkLED(3);
   delay(500);
 } // end initiate()
 
