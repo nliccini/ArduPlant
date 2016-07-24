@@ -18,12 +18,22 @@
  * and sensor and actuator connection pins.
  */
 int moistureVal;
-int dryVal = 775; // default dry soil value in case of wet calibration
 unsigned long previousTime;
-long interval = 173000000; // 2 days in milliseconds
 const int sensorPin = A0;
 const int pumpPin = 9;
 const int onBoardLED = 13;
+
+/* The constant pumpTime is where you determine how long you want the pump 
+ * to run when it is activated. Less time (in milliseconds) means less water.
+ * The variable dryVal is the default "too dry" value for calibrating in wet
+ * soil; it can be changed depending on how dry is "too dry" (as a default value
+ * for when you calibrate in wet soil only). The constant interval is your
+ * interval for how often you want to be reminded to check the water tank (in
+ * milliseconds).
+ */
+const int pumpTime = 5000;
+int dryVal = 775; // default dry soil value in case of wet calibration
+const long interval = 173000000; // 2 days in milliseconds
 
 /* The setup() method simply declares the pins' modes and sets everything intially
  * to off. Then it begins calibration to the "too dry" value using the intiate()
@@ -53,7 +63,7 @@ void loop() {
   Serial.println(" ");
   
   if(checkMoisture()) {
-    pump(7500);
+    pump(pumpTime);
   }
   else {
     // If soil is not too dry, do nothing.
