@@ -1,4 +1,5 @@
 Possible features to add:
+
 - Servo motor to spin plant pot to get even amounts of sunlight.
 - Thermistor to check for temperature values around the plant.
 - Control of artificial lighting with photoresistor to detect how much natural light is present.
