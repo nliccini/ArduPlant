@@ -13,9 +13,9 @@
  * and focus on the more important things!
  */
 
-/* Variables to initialize include moisture value, the predetermined value for
- * "too dry", the interval and timer values to remind you to check the water tank,
- * and sensor and actuator connection pins.
+/* Variables to initialize include moisture value, sensor, and actuator 
+ * connection pins. You can choose different pins to connect to. Pin 13
+ * is normally used as the board's built-in LED pin.
  */
 int moistureVal;
 unsigned long previousTime;
@@ -23,7 +23,8 @@ const int sensorPin = A0;
 const int pumpPin = 9;
 const int onBoardLED = 13;
 
-/* The constant pumpTime is where you determine how long you want the pump 
+/* These are the user's configurable variables depending on your needs:
+ * The constant pumpTime is where you determine how long you want the pump 
  * to run when it is activated. Less time (in milliseconds) means less water.
  * The variable dryVal is the default "too dry" value for calibrating in wet
  * soil; it can be changed depending on how dry is "too dry" (as a default value
