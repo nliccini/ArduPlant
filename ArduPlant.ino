@@ -12,6 +12,24 @@
  * plant at the right time, don't overwater, or don't underwater. Just sit back
  * and focus on the more important things!
  */
+ 
+/* Parts Required: 
+ *  Arduino UNO board
+ *  Mini breadboard
+ *  Transistor
+ *  Diode
+ *  Moisutre sensor (with included connection module)
+ *  Brushless DC submersible water pump
+ *  Vinyl tubing
+ *  Plastic water tank
+ *  Plastic Arduino board housing
+ *  5V Arduino compatible wall power adapter
+ *  12V wall power adapter (to power the pump)
+ *  Plant pot
+ *  
+ *  Created 21 July 2016
+ *  by Nick Liccini
+ */
 
 /* Variables to initialize include moisture value, sensor, and actuator 
  * connection pins. You can choose different pins to connect to. Pin 13
