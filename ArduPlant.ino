@@ -50,8 +50,8 @@ const int onBoardLED = 13;
  * interval for how often you want to be reminded to check the water tank (in
  * milliseconds).
  */
-const int pumpTime = 3000;
-int dryVal = 800; // default dry soil value in case of wet calibration
+const int pumpTime = 3500;
+int dryVal = 550; // default dry soil value in case of wet calibration
 const long interval = 173000000; // 2 days in milliseconds
 
 /* The setup() method simply declares the pins' modes and sets everything intially
@@ -118,7 +118,7 @@ int calibrate() {
   while(millis() < 4500) {
     reading = analogRead(sensorPin);
   }
-  if(reading > dryVal && reading < 925) {
+  if(reading > dryVal && reading < 850) {
     return reading;
   }
   else {
